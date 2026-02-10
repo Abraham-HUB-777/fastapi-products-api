@@ -27,7 +27,7 @@ jobs:
         run: ruff check .
 
       - name: Run unit tests
-        run: pytest tests/unit
+        run: PYTHONPATH=. pytest tests/unit
 
       - name: Start FastAPI
         run: |
@@ -35,4 +35,4 @@ jobs:
           sleep 5
 
       - name: Run end-to-end tests
-        run: pytest tests/e2e
+        run: PYTHONPATH=. pytest tests/e2e
